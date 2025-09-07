@@ -1,0 +1,12 @@
+CREATE OR REPLACE VIEW program_avg_grades AS
+SELECT 
+"Programs"."name",
+"Exams"."grade"
+FROM "Programs"
+INNER JOIN "Exams"
+    ON "Programs"."id" = "Exams"."programid";
+
+SELECT "name",
+AVG("grade") AS avg_grade
+FROM program_avg_grades 
+GROUP BY "name"

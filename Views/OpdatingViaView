@@ -1,0 +1,13 @@
+CREATE OR REPLACE VIEW active_students AS
+SELECT 
+    "Students"."id",
+    "Students"."name",
+    "Exams"."grade"
+FROM "Students"
+INNER JOIN "Exams"
+    ON "Students"."id" = "Exams"."studentid"
+WHERE "Exams"."grade" >= 2;
+
+SELECT "name", "grade" FROM active_students
+
+--Hvad jeg kan komme frem til så kan man ikke opdatere gennem et view hvis der er joinet

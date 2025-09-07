@@ -1,0 +1,15 @@
+CREATE OR REPLACE VIEW course_enrollments AS
+SELECT 
+"Courses"."name" AS courses_name,
+"Programs"."name" AS programs_name,
+"Students"."id"
+FROM "Courses"
+INNER JOIN "Programs"
+    ON "Courses"."programid" = "Programs"."id"
+INNER JOIN "Students"
+ON "Programs"."id" = "Students"."programid";
+
+SELECT courses_name, programs_name,
+COUNT ("id") AS student_count
+FROM course_enrollments
+GROUP BY courses_name, programs_name

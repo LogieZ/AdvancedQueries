@@ -1,0 +1,9 @@
+CREATE OR REPLACE VIEW failed_exams AS
+SELECT 
+    "Students"."name" AS student_name,
+    "Exams"."grade"
+FROM "Students"
+INNER JOIN "Exams"
+    ON "Students"."id" = "Exams"."studentid";
+
+SELECT student_name, grade FROM failed_exams WHERE (grade < 2)
