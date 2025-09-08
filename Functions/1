@@ -1,0 +1,4 @@
+CREATE FUNCTION get_student_count()
+RETURNS integer AS $$
+  SELECT COUNT("Students"."id") FROM "Students";
+$$ LANGUAGE sql;

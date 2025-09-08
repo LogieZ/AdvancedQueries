@@ -1,0 +1,5 @@
+CREATE FUNCTION get_avg_grade(p_programId INT)
+RETURNS numeric AS $$
+  SELECT AVG("grade") FROM "Exams"
+ WHERE "programid" = p_programid;
+$$ LANGUAGE sql;

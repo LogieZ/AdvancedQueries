@@ -1,0 +1,7 @@
+CREATE FUNCTION get_students_on_course(course_id INT)
+RETURNS TABLE(student_name character) AS $$
+SELECT DISTINCT ON ("Students"."id") "Students"."name"
+FROM "Students"
+INNER JOIN "Enrollments" ON "Students"."id" = "Enrollments"."studentid"
+WHERE "Enrollments"."courseid" = courseid;
+$$ LANGUAGE sql;
