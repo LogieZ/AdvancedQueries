@@ -1,0 +1,18 @@
+CREATE TABLE "Wallets" (student_id INT PRIMARY KEY, balance NUMERIC)
+
+CREATE TABLE "Transfer_log" (
+log_id SERIAL PRIMARY KEY,
+from_student INT,
+to_student INT,
+amount NUMERIC,
+status TEXT,
+log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
+
+INSERT INTO "Wallets"("student_id", "balance")
+VALUES
+(1, 200),
+(2, 2020),
+(3, 100),
+(4, 8045),
+(5, 84894),
+(6, 2)
