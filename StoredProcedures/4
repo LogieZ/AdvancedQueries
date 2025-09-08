@@ -1,0 +1,7 @@
+CREATE PROCEDURE update_student_program(student_id INT, new_program_id INT)
+LANGUAGE sql
+AS $$
+UPDATE "Students"
+SET "programid" = new_program_id
+WHERE "id" = student_id
+$$;

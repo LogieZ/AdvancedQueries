@@ -1,0 +1,7 @@
+CREATE PROCEDURE list_students_by_program(program_id INT)
+LANGUAGE sql
+AS $$
+SELECT "Students"."name"
+FROM "Students"
+WHERE "Students"."programid" = program_id
+$$;

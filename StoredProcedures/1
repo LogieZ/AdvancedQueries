@@ -1,0 +1,7 @@
+CREATE PROCEDURE list_all_students()
+LANGUAGE sql
+AS $$
+SELECT "Students"."name" AS student_name, "Programs"."name" AS program_name
+FROM "Students"
+INNER JOIN "Programs" ON "Students"."programid" = "Programs"."id"
+$$;

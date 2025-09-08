@@ -1,0 +1,9 @@
+CREATE PROCEDURE add_new_student(name VARCHAR, program_id INT)
+LANGUAGE sql
+AS $$
+INSERT INTO "Students" ("name", "programid") VALUES (name, program_id)
+$$;
+
+--Burde virke med CALL add_new_student('Anna', 2)
+--Men det er kun hvis id er sat til auto increment, hvilket det virker til at være sat,
+--men den prøver stadig at oprette den med id 1... Ved ikke hvorfor.
